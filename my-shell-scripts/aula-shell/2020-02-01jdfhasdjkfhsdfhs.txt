@@ -1,0 +1,137 @@
+Script started on 2020-01-31 17:11:01-0300
+"usando"
+"estrutura"
+"repetiçao"
+"for"Hello we are here:/home/nato/Trybe/aula-shell   the date is:sex jan 31 17:11:01 -03 2020
+]0;aula-shell[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ "usando"
+]0;"usando"usando: command not found
+]0;aula-shell: "usando"[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ "estrutura"
+]0;"estrutura"estrutura: command not found
+]0;aula-shell: "estrutura"[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ "repetiçao"
+]0;"repetiçao"repetiçao: command not found
+]0;aula-shell: "repetiçao"[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ "for"repetiçao"estrutura"[3Pusando"[5Pzshsudo apt install zsh[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4P[C[C[C[C[C[C[C[C[C[C[Czsh[Kcshecho $HOSTcsh[K[K[K[Kcat palavras.txt 
+]0;cat palavras.txt]0;aula-shell: cat[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ cat palavras.txt [6P"repetiçao"cat palavras.txt [Kcat palavras.txt [6P"repetiçao"estrutura"[3Pusando"[5Pzshsudo apt install zsh[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4P[C[C[C[C[C[C[C[C[C[C[Czsh[Kcshecho $HOSTcsh[Knano .bashrczsh[Ksudo nano ~/.bashrc[1P.bashrc[1Pbashrcls[Ksudo nano ~bashrc.bashrc/.bashrczsh[Knano .bashrccsh[Kecho $HOSTcsh[Kzshinstall zsh[4@apt [C[C[C[C[C[C[C[C[C[C[C[5@sudo [C[C[C[C[C[C[C[C[C[C[C[C[C[C[Czsh[K"usando"estrutura"repetiçao"cat palavras.txt [Kcat palavras.txt [6P"repetiçao"cat palavras.txt [C[1@ [1@>[C[1@ [1P
+]0;cat > palavras.txt"shell"
+"script"
+"usando"
+"estrutura"
+"repetiçao"
+"for"
+"terminal"
+^C
+]0;aula-shell: cat[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ pa[K[Kcat > palavras.txt [2P[C[C[C[C[C[C[C[C[C[C[C[C[C
+]0;cat palavras.txt"shell"
+"script"
+"usando"
+"estrutura"
+"repetiçao"
+"for"
+"terminal"
+]0;aula-shell: cat[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ cat palavras.txt [2@> [C[C[C[C[C[C[C[C[C[C[C[C[C[2P[C[C[C[C[C[C[C[C[C[C[C[C[C[6P"repetiçao"estrutura"[3Pusando"[5Pzshsudo apt install zsh[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4P[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K./script.sh 
+]0;./script.sh/
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell ./data.sh
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.sh/
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell ./data.sh
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.sh/
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell .data.sh
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.sh/
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell . data.sh
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shasdasf
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell . data.sh
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.sh./script.sh: line 6: read: `': not a valid identifier
+./script.sh: line 17: unexpected EOF while looking for matching `"'
+./script.sh: line 18: syntax error: unexpected end of file
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shasds
+./script.sh: line 17: unexpected EOF while looking for matching `"'
+./script.sh: line 18: syntax error: unexpected end of file
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shlsda
+./script.sh: line 17: unexpected EOF while looking for matching `"'
+./script.sh: line 18: syntax error: unexpected end of file
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh asd[K[K[K
+]0;./script.sh
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shsdas
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.sh^C
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shsdaasd
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shsajdhasdjha
+
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ echo 24^4
+2^4
+]0;aula-shell[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ echo 2^4[C][2^4]
+[2^4]
+]0;aula-shell[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ echo [2^4]$[2^4]
+6
+]0;aula-shell[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ echo $[2^4][C[1P2^4](2^4][C[C[C[C[K)
+2^4: command not found
+
+]0;aula-shell[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ echo $(2^4)[K}[1P2^4}{2^4}
+
+]0;aula-shell[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ echo ${2^4}(2^4)[2^4][1P[2^4][2P2^4./script.sh [5@cat palavras.txt[C[5P./script.sh[C
+]0;./script.shsad
+
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! /home/nato/Trybe/aula-shell
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shasd
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! 
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shsdasd
+Esse caminho existe
+Você tem permissão
+Shell Script com variáveis é demais! 
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ ./script.sh 
+]0;./script.shasdasd
+./script.sh: line 8: [: missing `]'
+Esse caminho não existe
+./script.sh: line 12: [: missing `]'
+Você não tem permissão
+Shell Script com variáveis é demais! asdasd
+Este script está rodando no computador: pc
+]0;aula-shell: ./script.sh[01;32mnato@pc[00m:[01;34m~/Trybe/aula-shell[00m$ [

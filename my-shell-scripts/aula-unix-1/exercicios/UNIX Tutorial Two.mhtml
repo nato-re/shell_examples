@@ -1,0 +1,752 @@
+From: <Saved by WebKit>
+Subject: UNIX Tutorial Two
+Date: Thu, 29 Jan 2020 17:10:18 -0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_1DC5_89F7FDC5.9C03E194"
+
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml"><head><meta charset=3D"windows=
+-1252">
+<title> UNIX Tutorial Two </title>
+<link href=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/unixtut2.css" rel=3D=
+"stylesheet" type=3D"text/css">
+<link href=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/unixtut2-print.css" =
+rel=3D"stylesheet" type=3D"text/css" media=3D"print">
+
+
+<meta name=3D"Copyright" content=3D"Michael Stonebank, 1995-2003">
+</head>
+<body>
+<div id=3D"container">
+<h1>UNIX Tutorial Two </h1>
+<h2>2.1 Copying Files</h2>
+<h3>cp (copy)</h3>
+<p> <span class=3D"command">cp <i>file1 file2</i></span> is the command whi=
+ch makes a copy of <strong>file1</strong> in the current working directory =
+and calls it <strong>file2</strong> </p>
+<p> What we are going to do now, is to take a file stored in an open access=
+ area=20
+  of the file system, and use the <span class=3D"command">cp</span> command=
+ to copy it to your unixstuff=20
+  directory. </p>
+<p> First, <span class=3D"command">cd</span> to your <b>unixstuff</b> direc=
+tory.</p>
+<p class=3D"cli"> % cd ~/unixstuff</p>
+<p> Then at the UNIX prompt, type, </p>
+<p class=3D"cli"> % cp /vol/ee/ee-info/Teaching/Unix/science.txt . </p>
+<p class=3D"hint"> Note: Don't forget the dot <b>.</b> at the end. Remember=
+, in UNIX,=20
+  the dot means the current directory.</p>
+<p> The above command means copy the file <strong>science.txt</strong> to t=
+he=20
+  current directory, keeping the name the same. </p>
+<p class=3D"hint"> (Note: The directory <strong>/vol/ee/ee-info/Teaching/Un=
+ix/</strong> is an area to=20
+  which everyone in the school has read and copy access. If you are from ou=
+tside=20
+  the University, you can grab a copy of the file=20
+  <a href=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/science.txt">here</a>=
+.=20
+ =20
+  Use 'File/Save As..' from the menu bar to save it=20
+  into your <strong>unixstuff</strong> directory.)</p>
+<h3>Exercise 2a</h3>
+<p>Create a backup of your <strong>science.txt</strong> file by copying it =
+to=20
+  a file called <strong>science.bak</strong> </p>
+<h2>2.2 Moving files</h2>
+<h3>mv (move)</h3>
+<p><span class=3D"command">mv <i>file1 file2</i></span>=20
+moves (or renames) <strong>file1</strong>=20
+  to <strong>file2</strong> </p>
+<p> To move a file from one place to another, use the mv command.=20
+  This has the effect of moving rather than copying the file, so you end up=
+ with=20
+  only one file rather than two. </p>
+<p> It can also be used to rename a file, by moving the file to the same di=
+rectory,=20
+  but giving it a different name. </p>
+<p> We are now going to move the file science.bak to your backup directory.=
+ </p>
+<p>First, change directories to your unixstuff directory (can you remember =
+how?).=20
+  Then, inside the <strong>unixstuff</strong> directory, type</p>
+<p class=3D"cli"> % mv science.bak backups/.</p>
+<p> Type ls and ls backups to see if it has worked.</p>
+<h2>2.3 Removing files and directories </h2>
+<h3>rm (remove), rmdir (remove directory)</h3>
+<p>To delete (remove) a file, use the <span class=3D"command">rm</span> com=
+mand. As an example,=20
+  we are going to create a copy of the <strong>science.txt</strong> file th=
+en=20
+  delete it. </p>
+<p> Inside your <strong>unixstuff</strong> directory, type</p>
+<p class=3D"cli"> % cp science.txt tempfile.txt<br>
+  % ls<br>
+  % rm tempfile.txt <br>
+  % ls</p>
+<p> You can use the <span class=3D"command">rmdir</span> command to remove =
+a directory (make sure=20
+  it is empty first). Try to remove the <strong>backups</strong> directory.=
+ You=20
+  will not be able to since UNIX will not let you remove a non-empty direct=
+ory.</p>
+<h3>Exercise 2b</h3>
+<p>Create a directory called <strong>tempstuff</strong> using <span class=
+=3D"command">mkdir</span> , then remove it using the <span class=3D"command=
+">rmdir</span> command.</p>
+<h2>2.4 Displaying the contents of a file on the screen </h2>
+<h3>clear (clear screen)</h3>
+<p>Before you start the next section, you may like to clear the terminal wi=
+ndow=20
+  of the previous commands so the output of the following commands can be c=
+learly=20
+  understood. </p>
+<p> At the prompt, type </p>
+<p class=3D"cli"> % clear </p>
+<p> This will clear all text and leave you with the % prompt at the top of =
+the=20
+  window. </p>
+<p>&nbsp;</p>
+<h3>cat (concatenate)</h3>
+<p>The command cat can be used to display the contents of a file=20
+  on the screen. Type: </p>
+<p class=3D"cli"> % cat science.txt </p>
+<p> As you can see, the file is longer than than the size of the window, so=
+ it=20
+  scrolls past making it unreadable. </p>
+<p>&nbsp;</p>
+<h3>less</h3>
+<p>The command less writes the contents of a file onto the screen=20
+  a page at a time. Type </p>
+<p class=3D"cli"> % less science.txt </p>
+<p> Press the [<b>space-bar</b>] if you want to see another page, and type =
+[<b>q</b>]=20
+  if you want to quit reading. As you can see,=20
+    <span class=3D"command">less</span> is used in preference=20
+  to <span class=3D"command">cat</span> for long files. </p>
+<p>&nbsp;</p>
+<h3>head</h3>
+<p>The <span class=3D"command">head</span> command writes the first ten lin=
+es of a file to the screen. </p>
+<p> First clear the screen then type </p>
+<p class=3D"cli"> % head science.txt </p>
+<p> Then type </p>
+<p class=3D"cli"> % head -5 science.txt </p>
+<p> What difference did the -5 do to the head command? </p>
+<p>&nbsp;</p>
+<h3>tail</h3>
+<p>The <span class=3D"command">tail</span> command writes the last ten line=
+s of a file to the screen. </p>
+<p> Clear the screen and type </p>
+<p class=3D"cli"> % tail science.txt </p>
+<p> Q. How can you view the last 15 lines of the file? </p>
+<p>&nbsp;</p>
+<h2>2.5 Searching the contents of a file </h2>
+<h3>Simple searching using less</h3>
+<p>Using <span class=3D"command">less</span>, you can search though a text =
+file for a keyword (pattern).=20
+  For example, to search through <strong>science.txt</strong> for the word =
+<b>'science'</b>,=20
+  type </p>
+<p class=3D"cli"> % less science.txt </p>
+<p> then, still in <span class=3D"command">less</span>,  type a forward=20
+  slash [<b>/</b>] followed by the word to search</p>
+<p class=3D"cli"> /science</p>
+<p> As you can see, <span class=3D"command">less</span> finds and highlight=
+s the keyword. Type [<b>n</b>]=20
+  to search for the next occurrence of the word. </p>
+<p>&nbsp;</p>
+<h3>grep (don't ask why it is called grep)</h3>
+<p><span class=3D"command">grep</span> is one of many standard UNIX utiliti=
+es. It searches files=20
+  for specified words or patterns. First clear the screen, then type </p>
+<p class=3D"cli"> % grep science science.txt </p>
+<p> As you can see, <span class=3D"command">grep</span> has printed out eac=
+h line containg the word=20
+  <b>science</b>. </p>
+<p> Or has it ???? </p>
+<p> Try typing </p>
+<p class=3D"cli"> % grep Science science.txt </p>
+<p> The <span class=3D"command">grep</span> command is case sensitive; it d=
+istinguishes between=20
+  Science and science. </p>
+<p> To ignore upper/lower case distinctions, use the -i option, i.e. type <=
+/p>
+<p class=3D"cli"> % grep -i science science.txt </p>
+<p> To search for a phrase or pattern, you must enclose it in single quotes=
+ (the=20
+  apostrophe symbol). For example to search for spinning top, type </p>
+<p class=3D"cli"> % grep -i 'spinning top' science.txt </p>
+<p> Some of the other options of grep are: </p>
+<p> <b>-v </b>display those lines that do NOT match <br>
+  <b>-n</b> precede each matching line with the line number <br>
+  <b>-c </b>print only the total count of matched lines <br>
+</p>
+<p> Try some of them and see the different results. Don't forget, you can u=
+se=20
+  more than one option at a time. For example, the number of lines without =
+the=20
+  words science or Science is</p>
+<p class=3D"cli"> % grep -ivc science science.txt </p>
+<p>&nbsp;</p>
+<h3>wc (word count)</h3>
+<p>A handy little utility is the <span class=3D"command">wc</span> command,=
+ short for word count.=20
+  To do a word count on <strong>science.txt</strong>, type </p>
+<p class=3D"cli"> % wc -w science.txt </p>
+<p> To find out how many lines the file has, type </p>
+<p class=3D"cli"> % wc -l science.txt </p>
+<h2>Summary </h2>
+<table border=3D"1" align=3D"center" cellpadding=3D"5" cellspacing=3D"0">
+  <tbody><tr>
+    <th>Command</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>=20
+    <td class=3D"command">cp <i>file1 file2</i></td>
+    <td>copy file1 and call it file2</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">mv <i>file1 file2</i></td>
+    <td>move or rename file1 to file2</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">rm <i>file</i></td>
+    <td>remove a file</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">rmdir <i>directory</i></td>
+    <td>remove a directory</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">cat <i>file</i></td>
+    <td>display a file</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">less <i>file</i></td>
+    <td>display a file a page at a time</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">head <i>file</i></td>
+    <td>display the first few lines of a file</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">tail <i>file</i></td>
+    <td>display the last few lines of a file</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">grep <i>'keyword' file</i></td>
+    <td>search a file for keywords</td>
+  </tr>
+  <tr>=20
+    <td class=3D"command">wc <i>file</i></td>
+    <td>count number of lines/words/characters in file</td>
+  </tr>
+</tbody></table>
+<p align=3D"center"><a href=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/uni=
+x1.html"><img src=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/media/left.gi=
+f" alt=3D"Previous" width=3D"37" height=3D"39" border=3D"0"></a>=20
+  <a href=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/index.html"><img src=
+=3D"http://www.ee.surrey.ac.uk/Teaching/Unix/media/home.gif" alt=3D"Home" w=
+idth=3D"81" height=3D"39" border=3D"0"></a><a href=3D"http://www.ee.surrey.=
+ac.uk/Teaching/Unix/unix3.html"><img src=3D"http://www.ee.surrey.ac.uk/Teac=
+hing/Unix/media/right.gif" alt=3D"Next" width=3D"37" height=3D"39" border=
+=3D"0"></a></p>
+<p align=3D"center">
+<iframe src=3D"http://rcm-na.amazon-adsystem.com/e/cm?t=3Dunixtutorialf-20&=
+amp;o=3D1&amp;p=3D48&amp;l=3Dop1&amp;pvid=3DF9ACBDE8E8845AE7&amp;ref-url=3D=
+http%3A//www.ee.surrey.ac.uk/Teaching/Unix/unix2.html&amp;ref-title=3DUNIX%=
+20Tutorial%20Two&amp;ref-ref=3Dhttp%3A//www.ee.surrey.ac.uk/Teaching/Unix/u=
+nix1.html&amp;bgc=3DFFFFFF&amp;bdc=3DE9ECF5&amp;pcc=3D990000&amp;tec=3D0000=
+00&amp;tic=3D0000FF&amp;ac=3D093697&amp;pvc=3D6E6E6E&amp;hl=3D1&amp;tg=3D_b=
+lank&amp;dsc=3D1&amp;incats=3Dabcdefg&amp;f=3Difr&amp;e=3Dwindows-1252" mar=
+ginwidth=3D"0" marginheight=3D"0" width=3D"728" height=3D"90" border=3D"0" =
+frameborder=3D"0" style=3D"border:none;" scrolling=3D"no"></iframe></p>
+<p class=3D"date">M.Stonebank@surrey.ac.uk, =A9 9th October 2000 </p>
+</div>
+
+
+</body></html>
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: text/css
+Content-Transfer-Encoding: base64
+Content-Location: http://www.ee.surrey.ac.uk/Teaching/Unix/unixtut2.css
+
+I2NvbnRhaW5lciB7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgYm9yZGVy
+OiAxcHggc29saWQgcmdiKDAsIDAsIDApOyBtYXJnaW46IDBweCA4JTsgdG9wOiAwcHg7IHBhZGRp
+bmc6IDBweCA0MHB4OyB9Cgpib2R5IHsgYmFja2dyb3VuZC1jb2xvcjogcmdiKDE1MSwgMTc0LCAx
+ODkpOyBmb250LWZhbWlseTogVmVyZGFuYSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjsg
+Y29sb3I6IHJnYig2OCwgNjgsIDY4KTsgbGluZS1oZWlnaHQ6IDEuNmVtOyB9CgpwIHsgZm9udC1z
+aXplOiAwLjhlbTsgbGluZS1oZWlnaHQ6IDEuNWVtOyB9CgpsaSB7IGZvbnQtc2l6ZTogMC43NWVt
+OyBsaW5lLWhlaWdodDogMS4yZW07IH0KCi5jb21tYW5kIHsgZm9udC13ZWlnaHQ6IGJvbGQ7IGZv
+bnQtZmFtaWx5OiAiQ291cmllciBOZXciLCBDb3VyaWVyLCBtb25vOyBjb2xvcjogcmdiKDAsIDAs
+IDApOyB9CgouY2xpIHsgZm9udC1mYW1pbHk6ICJDb3VyaWVyIE5ldyIsIENvdXJpZXIsIG1vbm87
+IGZvbnQtd2VpZ2h0OiBib2xkOyBwYWRkaW5nLXRvcDogNHB4OyBwYWRkaW5nLWJvdHRvbTogNHB4
+OyBwYWRkaW5nLWxlZnQ6IDE2cHg7IGNvbG9yOiByZ2IoMTkxLCAwLCAwKTsgYmFja2dyb3VuZC1j
+b2xvcjogcmdiKDI0OCwgMjQ4LCAyNDgpOyBsaW5lLWhlaWdodDogMS40ZW07IGZvbnQtc2l6ZTog
+MC45ZW07IH0KCiNjb250YWluZXIgcCB7IG1hcmdpbi1yaWdodDogNXB4OyBtYXJnaW4tbGVmdDog
+MjVweDsgfQoKLm91dHB1dCB7IGZvbnQtZmFtaWx5OiAiQ291cmllciBOZXciLCBDb3VyaWVyLCBt
+b25vOyBmb250LXdlaWdodDogYm9sZDsgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI0NSwgMjQ1LCAy
+NDUpOyBmb250LXNpemU6IDAuOTZlbTsgcGFkZGluZy10b3A6IDRweDsgcGFkZGluZy1ib3R0b206
+IDRweDsgcGFkZGluZy1sZWZ0OiAxNnB4OyBjb2xvcjogcmdiKDUxLCA1MSwgNTEpOyBsaW5lLWhl
+aWdodDogMS40ZW07IH0KCi5oaW50IHsgYm9yZGVyOiAxcHggc29saWQgcmdiKDEzMiwgMTkzLCAy
+NTUpOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjQwLCAyNTEsIDI1NSk7IHBhZGRpbmctdG9wOiA0
+cHg7IHBhZGRpbmctYm90dG9tOiA0cHg7IHBhZGRpbmctbGVmdDogMTZweDsgY29sb3I6IHJnYig1
+MSwgNTEsIDUxKTsgbWFyZ2luLWxlZnQ6IDEwcHg7IG1hcmdpbi1yaWdodDogMTBweDsgfQoKaDMg
+eyB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgZm9udC1zaXplOiAxLjFlbTsgfQoKaDIgeyBi
+YWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTAwLCAxMzQsIDE1Nik7IGZvbnQtd2VpZ2h0OiBub3JtYWw7
+IGZvbnQtc2l6ZTogMS4yZW07IGNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7IHBhZGRpbmc6IDNw
+eCAzcHggM3B4IDEwcHg7IH0KCmgxIHsgdGV4dC1hbGlnbjogY2VudGVyOyB9Cgp0aCwgdGQgeyBm
+b250LXNpemU6IDAuOGVtOyB9Cgp0aCB7IGJhY2tncm91bmQtY29sb3I6IHJnYigyMzYsIDIzMywg
+MjE2KTsgfQoKdGQgcCB7IGZvbnQtc2l6ZTogMC45NWVtOyB9CgouZGF0ZSB7IGNvbG9yOiByZ2Io
+MjU1LCAyNTUsIDI1NSk7IGJhY2tncm91bmQtY29sb3I6IHJnYigxNTMsIDE1MywgMTUzKTsgcGFk
+ZGluZzogM3B4OyB0ZXh0LWFsaWduOiBsZWZ0OyBmb250LXNpemU6IDAuN2VtOyB9CgouZGF0ZSBh
+IHsgY29sb3I6IHJnYigyNTUsIDI1NSwgMjA0KTsgZm9udC13ZWlnaHQ6IGJvbGQ7IHRleHQtYWxp
+Z246IGxlZnQ7IG1hcmdpbjogMHB4OyB9CgouaGlkZGVuIHsgZGlzcGxheTogbm9uZTsgfQoKI2Ft
+YXpvbiB7IGZsb2F0OiByaWdodDsgd2lkdGg6IDI1MHB4OyBjbGVhcjogYm90aDsgfQoKZGwgeyB3
+aWR0aDogMjQwcHg7IHBhZGRpbmc6IDBweDsgYmFja2dyb3VuZC1pbWFnZTogdXJsKCJodHRwOi8v
+d3d3LmVlLnN1cnJleS5hYy51ay9UZWFjaGluZy9Vbml4L21lZGlhL2JveF9ib3R0b20uZ2lmIik7
+IGxpbmUtaGVpZ2h0OiBub3JtYWw7IGJhY2tncm91bmQtcG9zaXRpb246IGxlZnQgYm90dG9tOyBi
+YWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0IG5vLXJlcGVhdDsgfQoKZHQgeyBtYXJnaW46IDBw
+eCAwcHggMTBweDsgcGFkZGluZzogMTBweDsgYm9yZGVyLWJvdHRvbS13aWR0aDogMXB4OyBib3Jk
+ZXItYm90dG9tLXN0eWxlOiBzb2xpZDsgYm9yZGVyLWJvdHRvbS1jb2xvcjogcmdiKDI1NSwgMjU1
+LCAyNTUpOyBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoImh0dHA6Ly93d3cuZWUuc3VycmV5LmFjLnVr
+L1RlYWNoaW5nL1VuaXgvbWVkaWEvYm94X3RvcC5naWYiKTsgZm9udC1zaXplOiAwLjllbTsgZm9u
+dC13ZWlnaHQ6IGJvbGQ7IGJhY2tncm91bmQtcG9zaXRpb246IGxlZnQgdG9wOyBiYWNrZ3JvdW5k
+LXJlcGVhdDogbm8tcmVwZWF0IG5vLXJlcGVhdDsgfQoKZGQgeyBtYXJnaW46IDBweCAwcHggMHB4
+IDEwcHg7IHBhZGRpbmc6IDBweCAxMHB4IDEwcHg7IGZvbnQtZmFtaWx5OiBWZXJkYW5hLCBzYW5z
+LXNlcmlmOyBmb250LXNpemU6IDAuOGVtOyBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoImh0dHA6Ly93
+d3cuZWUuc3VycmV5LmFjLnVrL1RlYWNoaW5nL1VuaXgvbWVkaWEvYXJyb3cuZ2lmIik7IGJhY2tn
+cm91bmQtcG9zaXRpb246IDBweCAzcHg7IGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQgbm8t
+cmVwZWF0OyB9CgojYmx1ZSBkdCB7IGJhY2tncm91bmQtY29sb3I6IHJnYigxMDIsIDE1MywgMjA0
+KTsgfQoKI2JsdWUgeyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTUzLCAyMDQsIDI1NSk7IH0KCiNy
+ZWQgZHQgeyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjU1LCAyMDQsIDE1Myk7IH0KCiNyZWQgeyBi
+YWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjU1LCAyMzEsIDIwNik7IH0KCiNncmVlbiBkdCB7IGJhY2tn
+cm91bmQtY29sb3I6IHJnYigxODQsIDIxOSwgMTQ5KTsgfQoKI2dyZWVuIHsgYmFja2dyb3VuZC1j
+b2xvcjogcmdiKDIyNiwgMjU1LCAxOTgpOyB9
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: text/css
+Content-Transfer-Encoding: base64
+Content-Location: http://www.ee.surrey.ac.uk/Teaching/Unix/unixtut2-print.css
+
+I2NvbnRhaW5lciB7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgcGFkZGlu
+ZzogMHB4OyB0b3A6IDBweDsgbWFyZ2luOiAwcHg7IGJvcmRlcjogbm9uZTsgfQoKYm9keSB7IGJh
+Y2tncm91bmQtY29sb3I6IHJnYig0LCAxMTIsIDE0Nyk7IGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVs
+dmV0aWNhLCBzYW5zLXNlcmlmOyBjb2xvcjogcmdiKDEwMiwgMTAyLCAxMDIpOyBsaW5lLWhlaWdo
+dDogMS41ZW07IH0KCnAsIGxpIHsgZm9udC1zaXplOiAwLjg1ZW07IGxpbmUtaGVpZ2h0OiAxLjVl
+bTsgfQoKLmNvbW1hbmQgeyBmb250LXdlaWdodDogYm9sZDsgZm9udC1mYW1pbHk6ICJDb3VyaWVy
+IE5ldyIsIENvdXJpZXIsIG1vbm87IGNvbG9yOiByZ2IoMCwgMCwgMCk7IH0KCi5jbGkgeyBmb250
+LWZhbWlseTogIkNvdXJpZXIgTmV3IiwgQ291cmllciwgbW9ubzsgZm9udC13ZWlnaHQ6IGJvbGQ7
+IGJvcmRlcjogMXB4IHNvbGlkIHJnYigyNTUsIDIxNSwgMTMyKTsgYmFja2dyb3VuZC1jb2xvcjog
+cmdiKDI1NSwgMjU1LCAyNDApOyBmb250LXNpemU6IDAuOThlbTsgcGFkZGluZy10b3A6IDRweDsg
+cGFkZGluZy1ib3R0b206IDRweDsgcGFkZGluZy1sZWZ0OiAxNnB4OyBjb2xvcjogcmdiKDUxLCA1
+MSwgNTEpOyB9Cgoub3V0cHV0IHsgZm9udC1mYW1pbHk6ICJDb3VyaWVyIE5ldyIsIENvdXJpZXIs
+IG1vbm87IGZvbnQtd2VpZ2h0OiBib2xkOyBib3JkZXI6IDFweCBzb2xpZCByZ2IoMTk0LCAxOTMs
+IDE5Mik7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNDgsIDI0OCwgMjQ4KTsgZm9udC1zaXplOiAw
+Ljk4ZW07IHBhZGRpbmctdG9wOiA0cHg7IHBhZGRpbmctYm90dG9tOiA0cHg7IHBhZGRpbmctbGVm
+dDogMTZweDsgY29sb3I6IHJnYig1MSwgNTEsIDUxKTsgfQoKLmhpbnQgeyBib3JkZXI6IDFweCBz
+b2xpZCByZ2IoMjU1LCAxMzUsIDEzMik7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI0MSwg
+MjQwKTsgcGFkZGluZy10b3A6IDRweDsgcGFkZGluZy1ib3R0b206IDRweDsgcGFkZGluZy1sZWZ0
+OiAxNnB4OyBjb2xvcjogcmdiKDUxLCA1MSwgNTEpOyBtYXJnaW4tbGVmdDogMjBweDsgbWFyZ2lu
+LXJpZ2h0OiAyMHB4OyB9CgpoMyB7IGZvbnQtc2l6ZTogMS4xZW07IGNvbG9yOiByZ2IoMCwgMTAy
+LCAxNTMpOyB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgfQoKaDIgeyBmb250LXNpemU6IDEu
+M2VtOyBjb2xvcjogcmdiKDAsIDEwMiwgMTUzKTsgYm9yZGVyLXdpZHRoOiAxcHg7IGJvcmRlci10
+b3Atc3R5bGU6IGRhc2hlZDsgcGFkZGluZy10b3A6IDVweDsgfQoKaDEgeyB0ZXh0LWFsaWduOiBj
+ZW50ZXI7IH0KCnRoLCB0ZCB7IGZvbnQtc2l6ZTogMC45ZW07IH0KCnRoIHsgYmFja2dyb3VuZC1j
+b2xvcjogcmdiKDIzNiwgMjMzLCAyMTYpOyB9CgouZGF0ZSB7IGNvbG9yOiByZ2IoMjU1LCAyNTUs
+IDI1NSk7IGJhY2tncm91bmQtY29sb3I6IHJnYigwLCAwLCAwKTsgcGFkZGluZzogM3B4OyB0ZXh0
+LWFsaWduOiByaWdodDsgZm9udC1zaXplOiAwLjg1ZW07IH0KCi5kYXRlIGEgeyBjb2xvcjogcmdi
+KDI1NSwgMjU1LCAyNTUpOyBmb250LXdlaWdodDogYm9sZDsgdGV4dC1hbGlnbjogbGVmdDsgbWFy
+Z2luOiAwcHg7IH0=
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.ee.surrey.ac.uk/Teaching/Unix/media/left.gif
+
+R0lGODlhJQAnAOYAAElJZ+/v76WlpW1tbczMzF1dumpqwlJSpaWl4YyMjEtLlv///97e3ouL2F1d
+XcXFxbW1tXx8fJeXrIODy1hYrkJChGZmzGFhbcPD69bW1vDw+ubm5m1tgVJSnoODhZWV3Hp6zURE
+e9DQ66ys476+vnp6ieDg9F1di62trU9PimJivWpqi1tbtnFxzlpak1JSeLW155yc22Rkh1VVqvf3
+95mZmYODr3Nzc4OD1nFxoVNTWJmZmWZmZnp602Jip2Njxf4BAgAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAQUAP8ALAAAAAAlACcAAAf/gAuCg4SFhoYmMIeLjIwaMBMZjZOTGDETPgE0m5yUlCIIlz45ARum
+AZo0nosmI6GYFRIMDBkZG6iqq4SPIzEfmAoVEA/EBLaauoK8CB8NOAYdFSkQECgQJMe5njQYI70f
+OD0tLMEyAjU1AhAEt7qgoc3hLSozCiEcCfnq7AGerd/OxFmwwCJahRs3IiSoAcGWNlYwAMobaEEF
+hWAhBgxQKAAbMoiu4gmkaKFAvRAAePBQiOIBg4+FeH2bSHJggQMVKujgsZEhu4eDuknsUZNkwQoh
+HPD0UAPbhofcYkgV2aKo0WgAlN5IIMAlTBENJoAwAKJsVatXK2RdmQAFgZeG/0SAUGFAhd27aEse
+sOegZ8Onh2iMMEChMIUCBX6gNalAwdKmDg+VImDjgOXCiBXXtNhBgYMbHjpmgDmIRqkMDwSs6NBh
+BgUWiTUP/MFi7wvQXV8CFVSKwQMIAkq4sOw6s+wCFDqkwO1x9wLTG1ADT8ChtWvYsX9Y3MuDqVPn
+m04TIIGiRoIVxF8bZ1HvQgSfgBdBp/X7nAcZrGfMwM44Bcu3/TQyHwH11eDBCZYdYFg9CmzVkW6T
+hLcBA+MBV0MEJ7BmXWcXMPWXc4ZImMF4KJzDgQsadvbCe261s0p4tJAoAHUaKuAfV16BKB8q9JFn
+3mqNDcBVc8kIMp909smgwEcFC31YpJEDFugBPvu4+ORzA5IAnABcksCPjttAN6KW1DyQzZWFwDgi
+AWwycAuYyUA34SxvwlmkaajkuQmajHDSCZ+ABtpIIAA7
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.ee.surrey.ac.uk/Teaching/Unix/media/home.gif
+
+R0lGODlhUQAnAOYAADMzZrCwsGZmzGZmZvb2/Hd30t3d3UlJkouLi1tbW8zMzIWFhaur42ZmzFpa
+r4uL2O/v70REiaWlpc7O6pmZmZWV3Ly86UJChH190XNzyJmZmejo6L29vcbG7PX19VBQn0BAX11d
+upmZzEhIj4SE1tbW1nFxcaamwkJCcpyc3lJSpP///9nZ8ufn98XFxWRkpOzs+WZmZrW15zg4cbi4
+uHNz0GRkvKen4khIVnx800xMmT4+fFVVqlpatdDQ72VlxP4BAgAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAQUAP8ALAAAAABRACcAAAf/gCsrLTIVD4eIiYqLjI2OjyQVEwQEgpaXmJY+Mjcpho+goaKNGBki
+EBAeHpmshAwpDySys7S1tre4ubk5ORk2DicGG6mrrJacsDkFNczNzs/Q0dLT1D89Hy8KJcKqxoIV
+yTUC4+Tl5ufo6errAjY8OjoBHArc3isPFSQF7Pz9/ughVIwYQUECDXoQKhk7RELcv4cQ0wWMMGIB
+AgkcSmwoxoqhw4ggI16jaGIBhQAIvXkMyfLhyBEDTFx0YSDhwlgfW+pU9zLmAow1FWZaee6BIBY7
+W/YsSSGjzY440RldgTRpyKUmnQrFRNTcVBYFZMh4UK6C2ArkChyqkYITsxsy/1KUIyFWBol1WJuW
+eDo0alFBW9GSgHEJxl0ZglpYaqFYkIVxHTB14PmBok+9fLn69WoJhkIfAhr78JFYAOLElggQXkFA
+QApBMGSslosur9abDaXCFlDhKIndAlbTFTS5cYoalgSQXtFBRuQVoGtXhsn0NtTcf6kK+Pp1HAtB
+D07LEPD9noDk5TFVPWd779ZLXct1/1oAMDOFYQWNL082+XO5JDyQkzntZQbfZvIdtZ2Cy8GwGmji
+kQfeeYIseJQlZElnWXXu4TbgOPMpWMNzxIkTIX8UrjBOCkIRQJuG1GXV4XUf9lPDWiEhwk6B72GI
+oFVA8ughkESOIySNRRJ5ZP9f2CWZ1JKaYVCjkyBBeUmAOUxJJUTXXBAjZj0KIss+Avxg5plopqnm
+mmy26WYI71wQwWXWZZJCKT+EoGcPfPbp55+ABirooIK+E8EMKNA5YyYT+OIADyp8IOmklFZq6aWY
+ZoqpDgdcMAMAOChq4CUiOPCBDiNEoOqqrLbq6quwxgrrBTt8CkICPgE1qiUQnPACpwMFK+ywxBZr
+7LHHqooCDgngKpMENO0qCAQGKBAABQuYMMC23Hbr7bfghivuuNsyhVJN9niwQQkcSIBAtibEK++8
+9NZr77345lvSRRltZA8B1CpAgwQUvLvAwQgnrPDCDDfssMMIFHRQUPasoG5ftRwEIAHBFHTs8ccg
+hyzyyCSLvLE89PhbscUbGFCCAi5wIPPMNNds880456yzC9pww1HFHkDQsgEul2D00UgnrfTSTDe9
+NNHCELPyJQQEjcrVWGet9dZcd+011t2sHAgAOw==
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.ee.surrey.ac.uk/Teaching/Unix/media/right.gif
+
+R0lGODlhJQAnAOYAADMzZu/v75mZmWZmzEpKlczMzGZmZpOT2VtbW2ZmzGZmmf///7S01q2trT09
+et7e3mFhtISE1oODg01NVVhYsMXFxdbW1vf393t703Nzw5aWtpmZzObm5lpac3t7e8jI2bW1tURE
+iTk5clJSo0dHWNfX3qioz2trxLe35ExMcWJiw4uLi3Nz0I2N1r29vWZmZpmZmeLi9KWlpXNzc1lZ
+lnt7xsfH7E1NjKOj3L291EBAf9bW8GVlv5yc3ltbtfHx9/4BAgAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAQUAP8ALAAAAAAlACcAAAf/gCg/C4SFhoeIiYk2LYKKj5CIMS0tGCgBF5mRm4iUGJ8MAZgXnKUo
+lSwnJzUMHKOlkTsRGKmqJy0frpqwiT+ztaoZGS0luryIF6gsA7YszhsPoqTHhSifywPMqs41JtGY
+1As719jZtsGtr7wXn7TZ79q2GTm605wXONfw8Oe3ueqbbPzat+9chg0lpHEKECGCM4IFz0FTCOnC
+gYEQ9/GAwBGChm/2EuFAlfGdCh8jCBAI4cABDXoADx24WI7gSQojWAIAkGIFiAoW6iH60YNmRhU4
+V4rY2UHCChk/g4I7tKMHyX1IU+oEQMKAgRlOoRZ4wGFXNasYTsDLulKHCBEk/xDI/ephhYCoHH6E
+XIDDaDYISUO4hTtBLgKvYAWIjbY3BtplJ7U6eCui8Fy6dqECNWbIBtoTPnCypGz5MF0Jihu4KFAs
+Jt8eEUBrXcrVMGKwdlUXsEDW9YWiNSisdLAz7uWvTgU0iNrbrKEdB4ITGGzcNPLMzIUqOgVhcAqv
+4DEr/jlW+6MeNW6I6LBixQzwMzyglqFb6lRIMWrQoAFVgIQZAMongHKr2bfXIwwo0MADBTTgnwfy
+5VZgc7zkIAqDDraXW3au3RMAgyDIIKJmvJl3zAUfFuACCCxWUF6H6wTAgQUF1LibK/eFUwiKHDzg
+I44H6rhAJqIU6ZyQhmSiZAmQSDbp5JMLBAIAOw==
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://rcm-na.amazon-adsystem.com/e/cm?t=unixtutorialf-20&o=1&p=48&l=op1&pvid=F9ACBDE8E8845AE7&ref-url=http%3A//www.ee.surrey.ac.uk/Teaching/Unix/unix2.html&ref-title=UNIX%20Tutorial%20Two&ref-ref=http%3A//www.ee.surrey.ac.uk/Teaching/Unix/unix1.html&bgc=FFFFFF&bdc=E9ECF5&pcc=990000&tec=000000&tic=0000FF&ac=093697&pvc=6E6E6E&hl=1&tg=_blank&dsc=1&incats=abcdefg&f=ifr&e=windows-1252
+
+<html><head><meta charset=3D"windows-1252"><title>Amazon</title></head><bod=
+y topmargin=3D"0" leftmargin=3D"0" marginheight=3D"0" marginwidth=3D"0"><ma=
+p name=3D"boxmap48"><area alt=3D"privacy information" shape=3D"rect" coords=
+=3D"638,78,728,90" href=3D"https://www.amazon.com/gp/dra/info" target=3D"_t=
+op"><area alt=3D"Amazon" coords=3D"0,0,10000,10000" href=3D"https://www.ama=
+zon.com/?tag=3Dunixtutorialf-20&amp;camp=3D1&amp;creative=3D373897&amp;link=
+Code=3Dop1" target=3D"_top"></map><img src=3D"https://images-na.ssl-images-=
+amazon.com/images/G/01/rcm/728x90.gif" width=3D"728" height=3D"90" border=
+=3D"0" usemap=3D"#boxmap48">   </body></html>
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://images-na.ssl-images-amazon.com/images/G/01/rcm/728x90.gif
+
+R0lGODlh2AJaAPcAAAAAAAAAMwAAZgAAmQAAzAAA/wArAAArMwArZgArmQArzAAr/wBVAABVMwBV
+ZgBVmQBVzABV/wCAAACAMwCAZgCAmQCAzACA/wCqAACqMwCqZgCqmQCqzACq/wDVAADVMwDVZgDV
+mQDVzADV/wD/AAD/MwD/ZgD/mQD/zAD//zMAADMAMzMAZjMAmTMAzDMA/zMrADMrMzMrZjMrmTMr
+zDMr/zNVADNVMzNVZjNVmTNVzDNV/zOAADOAMzOAZjOAmTOAzDOA/zOqADOqMzOqZjOqmTOqzDOq
+/zPVADPVMzPVZjPVmTPVzDPV/zP/ADP/MzP/ZjP/mTP/zDP//2YAAGYAM2YAZmYAmWYAzGYA/2Yr
+AGYrM2YrZmYrmWYrzGYr/2ZVAGZVM2ZVZmZVmWZVzGZV/2aAAGaAM2aAZmaAmWaAzGaA/2aqAGaq
+M2aqZmaqmWaqzGaq/2bVAGbVM2bVZmbVmWbVzGbV/2b/AGb/M2b/Zmb/mWb/zGb//5kAAJkAM5kA
+ZpkAmZkAzJkA/5krAJkrM5krZpkrmZkrzJkr/5lVAJlVM5lVZplVmZlVzJlV/5mAAJmAM5mAZpmA
+mZmAzJmA/5mqAJmqM5mqZpmqmZmqzJmq/5nVAJnVM5nVZpnVmZnVzJnV/5n/AJn/M5n/Zpn/mZn/
+zJn//8wAAMwAM8wAZswAmcwAzMwA/8wrAMwrM8wrZswrmcwrzMwr/8xVAMxVM8xVZsxVmcxVzMxV
+/8yAAMyAM8yAZsyAmcyAzMyA/8yqAMyqM8yqZsyqmcyqzMyq/8zVAMzVM8zVZszVmczVzMzV/8z/
+AMz/M8z/Zsz/mcz/zMz///8AAP8AM/8AZv8Amf8AzP8A//8rAP8rM/8rZv8rmf8rzP8r//9VAP9V
+M/9VZv9Vmf9VzP9V//+AAP+AM/+AZv+Amf+AzP+A//+qAP+qM/+qZv+qmf+qzP+q///VAP/VM//V
+Zv/Vmf/VzP/V////AP//M///Zv//mf//zP///wAAAAAAAAAAAAAAACH5BAAAAAAALAAAAADYAloA
+AAj+AJXpW0YvGj1lBpfpU6aQIDSCBhHSU8hwIL2HBQ8mXNjwIkSNEzlaxBhxY0WHHyVS7EgS5MqR
+KU2yjBnypMeMKkWixCkTJs+aM3++3FkSqM+iQ28i1anUJdOWOW1C7UnUqVSaSacarRo16NKrQp9i
+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
+------=_NextPart_000_1DC5_89F7FDC5.9C03E194--
